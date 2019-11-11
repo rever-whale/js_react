@@ -1,0 +1,8 @@
+export const SET_ROOM_NAME = 'SET_ROOM_NAME'
+export const SET_ROOM_LIST = 'SET_ROOM_LIST'
+export const CREATE_ROOM = 'CREATE_ROOM'
+export const SET_ITEM_NAME = 'SET_ITEM_NAME'
+export const SET_ITEM_CATEGORY = 'SET_ITEM_CATEGORY'
+export const CREATE_ITEM = 'CREATE_ITEM'
+export const DELETE_ITEM = 'DELETE_ITEM'
+export const DELETE_ROOM = 'DELETE_ROOM'

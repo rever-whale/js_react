@@ -1,8 +1,12 @@
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR&display=swap');
+
+* {
+  font-family: 'Noto Sans KR', sans-serif;
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -10,4 +14,33 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+.tool-container {
+  width: 80%;
+  margin: auto;
+  border: 1px solid black;
+}
+
+.room-tools,
+.item-tools {
+  padding: 5px;
+}
+
+.item-tools select {
+  height: 26px
+}
+
+.room-list {
+  padding: 10px;
+}
+
+.room {
+  float: left;
+  width: calc(25% - 12px);
+  height: 200px;
+  border: 1px solid #ff6666;
+  margin: 5px;
+  padding: 10px;
+  overflow: auto;
 }

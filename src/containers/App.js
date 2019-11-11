@@ -1,11 +1,12 @@
 import React from 'react'
-import RoomContainer from './RoomContainer'
+import CoreContainer from './CoreContainer'
+import { StateProvider } from '../store'
 
 function App () {
   return (
-    <div>
-      <RoomContainer />
-    </div>
+    <StateProvider>
+      <CoreContainer />
+    </StateProvider>
   )
 }
 

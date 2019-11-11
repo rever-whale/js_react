@@ -1,13 +1,14 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Item from './Item'
+import ItemContainer from '../../containers/Items/ItemContainer'
 
 // load constants
-import { NO_NAME, ERROR_MSG } from '../constants'
+import { NO_NAME, ERROR_MSG } from '../../constants'
 
-function Room ({name, list, deleteRoom, deleteItem}) {
+function Room ({name, list, deleteRoom}) {
   const itemList = list.map(({name, category, idx}) => (
-    <Item name={name} category={category} key={idx} deleteItem={deleteItem}/>
+    <ItemContainer name={name} category={category} key={idx} />
   ))
 
   return (
