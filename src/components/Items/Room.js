@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import Item from './Item'
 
 // load constants
-import { NO_NAME, ERROR_MSG } from '../constants'
+import { NO_NAME, ERROR_MSG } from '../../constants'
 
 function Room ({name, list, deleteRoom, deleteItem}) {
   const itemList = list.map(({name, category, idx}) => (

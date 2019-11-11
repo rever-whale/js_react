@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { NO_NAME, ERROR_MSG, DELETE_ITEM } from '../constants'
+import { NO_NAME, ERROR_MSG, DELETE_ITEM } from '../../constants'
 
 function Item ({name, category, idx, deleteItem}) {
   return (

@@ -3,9 +3,9 @@ import PropTypes from 'prop-types'
 import { ERROR_MSG } from '../constants'
 
 // load component
-import Room from '../components/Room'
-import RoomTools from '../components/RoomTools'
-import ItemTools from '../components/ItemTools'
+import Room from './Items/Room'
+import RoomTools from './Tools/RoomTools'
+import ItemTools from './Tools/ItemTools'
 
 function Core ({roomName, setRoomName, createRoom, itemName, setItemName, 
   itemCategory, setItemCategory, roomList, createItem, deleteRoom, deleteItem}) {

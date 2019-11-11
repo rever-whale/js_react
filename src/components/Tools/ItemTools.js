@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { ERROR_MSG, CREATE_ITEM } from '../constants'
+import { ERROR_MSG, CREATE_ITEM, NO_ROOM } from '../../constants'
 
 function ItemTools ({itemName, setItemName, itemCategory, setItemCategory, createItem, roomList }) {
   const $roomSelectList = roomList.map(({name}, idx) => (
@@ -14,7 +14,7 @@ function ItemTools ({itemName, setItemName, itemCategory, setItemCategory, creat
         value={itemName}
         onChange={({target: { value }}) => setItemName(value)}/>
       <select value={itemCategory} onChange={({target: { value }}) => setItemCategory(value)}>
-        <option value="-1">방 없음</option>
+        <option value="-1">{NO_ROOM}</option>
         { $roomSelectList }
       </select>
       <button onClick={createItem}>{CREATE_ITEM}</button>
