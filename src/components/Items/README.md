@@ -23,7 +23,7 @@
 |:---|:---|:---|:---|
 |name|String|''|아이템의 이름|
 |category|String \| Number|0|아이템의 카테고리 인덱스|
-|deleteItem|Function|() => console.warn(ERROR_MSG.UNDEFINED_FUNC)|해당 아이템을 삭제한다|
+|deleteItem|Function|ERROR_MSG.UNDEFINED_FUNC|해당 아이템을 삭제한다|
 
 ## <a name="room"> Room
 
@@ -41,5 +41,5 @@
 |:---|:---|:---|:---|
 |name|String|''|방의 이름|
 |list|Array|[]|방 정보를 담고 있는 배열|
-|deleteRoom|Function|() => console.warn(ERROR_MSG.UNDEFINED_FUNC)|해당 방을 삭제한다|
-|deleteItem|Function|() => console.warn(ERROR_MSG.UNDEFINED_FUNC)|해당 아이템을 삭제한다|
+|deleteRoom|Function|ERROR_MSG.UNDEFINED_FUNC|해당 방을 삭제한다|
+|deleteItem|Function|ERROR_MSG.UNDEFINED_FUNC|해당 아이템을 삭제한다|
