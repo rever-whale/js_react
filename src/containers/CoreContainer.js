@@ -1,25 +1,19 @@
 import React, { useState } from 'react'
-import Room from '../components/Room'
-import { CREATE_ROOM, ERROR_MSG, CREATE_ITEM } from '../constants'
+import Core from '../components/Core'
+import { ERROR_MSG } from '../constants'
 
 /**
  * 1. 방 만들기
  * 2. 방 삭제하기
  */
-function RoomContainer () {
+function CoreContainer () {
   // state
   const [roomName, setRoomName] = useState('')
   const [roomList, setRoomList] = useState([])
   const [itemName, setItemName] = useState('')
-  const [itemCategory, setItemCategory] = useState('-1')
+  const [itemCategory, setItemCategory] = useState(-1)
 
   // method
-
-  /**
-   * 방을 만든다.
-   * 1. 입력되있는 이름이 없거나,
-   * 2. 중복되는 이름이 있을 경우 예외처리한다.
-   */
   function createRoom() {
     if (!roomName) {
       alert(ERROR_MSG.NO_NAME)
@@ -61,6 +55,16 @@ function RoomContainer () {
 
   // item method
   function createItem () {
+    if (itemCategory === -1) {
+      alert(ERROR_MSG.NO_SELECTED_ROOM)
+      return
+    }
+
+    if (!itemName) {
+      alert(ERROR_MSG.NO_NAME)
+      return
+    }
+
     const targetList = roomList.slice()
     const targetItemList = targetList[itemCategory].list
     targetItemList.push({
@@ -90,44 +94,20 @@ function RoomContainer () {
     setItemCategory(-1)
   }
 
-  // dom
-  const $roomList = roomList.map(({name, list}, idx) => (
-    <Room key={idx} name={name} list={list} deleteRoom={() => deleteRoom(idx)} deleteItem={deleteItem}/>
-  ))
-
-  const $roomSelectList = roomList.map(({name}, idx) => (
-    <option value={idx} key={idx}>{name}</option>
-  ))
-
   return (
-    <div className="room-container">
-      <div className="room-tools">
-        <input
-          className="room-input"
-          value={roomName}
-          onChange={({target: { value }}) => setRoomName(value)}/>
-        <button
-          className="btn-create-room"
-          onClick={createRoom}
-          >{CREATE_ROOM}
-        </button>
-      </div>
-      <div className="item-tools">
-        <input
-          className="item-input"
-          value={itemName}
-          onChange={({target: { value }}) => setItemName(value)}/>
-        <select value={itemCategory} onChange={({target: { value }}) => setItemCategory(value)}>
-          <option value="-1">방 없음</option>
-          { $roomSelectList }
-        </select>
-        <button onClick={createItem}>{CREATE_ITEM}</button>
-      </div>
-      <div className="room-list">
-        {$roomList}
-      </div>
-    </div>
+    <Core 
+      roomName={roomName}
+      setRoomName={setRoomName}
+      createRoom={createRoom}
+      itemName={itemName}
+      setItemName={setItemName}
+      itemCategory={itemCategory}
+      setItemCategory={setItemCategory}
+      roomList={roomList}
+      createItem={createItem}
+      deleteRoom={deleteRoom}
+      deleteItem={deleteItem}/>
   ) 
 }
 
-export default RoomContainer
+export default CoreContainer

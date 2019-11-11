@@ -6,5 +6,6 @@ export const DELETE_ITEM = '아이템 삭제'
 export const ERROR_MSG = {
   NO_NAME: '이름을 입력해주세요.',
   DUPLICATE_NAME: '중복된 이름이 있습니다.',
-  UNDEFINED_FUNC: '함수가 정의되지 않았습니다.'
+  UNDEFINED_FUNC: '함수가 정의되지 않았습니다.',
+  NO_SELECTED_ROOM: '아이템이 속할 방을 선택해주세요'
 }
