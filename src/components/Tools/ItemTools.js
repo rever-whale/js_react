@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { ERROR_MSG, CREATE_ITEM, NO_ROOM, NULL_INDEX } from '../../constants'
+import { ERROR_MSG, TEXT, VALUE } from '../../constants'
 
 function ItemTools ({itemName, setItemName, itemCategory, setItemCategory, createItem, roomList }) {
   const $roomSelectList = roomList.map(({name}, idx) => (
@@ -14,10 +14,10 @@ function ItemTools ({itemName, setItemName, itemCategory, setItemCategory, creat
         value={itemName}
         onChange={({target: { value }}) => setItemName(value)}/>
       <select value={itemCategory} onChange={({target: { value }}) => setItemCategory(value)}>
-        <option value={NULL_INDEX}>{NO_ROOM}</option>
+        <option value={VALUE.NULL_INDEX}>{TEXT.NO_ROOM}</option>
         { $roomSelectList }
       </select>
-      <button onClick={createItem}>{CREATE_ITEM}</button>
+      <button onClick={createItem}>{TEXT.CREATE_ITEM}</button>
     </div>
   )
 }
@@ -29,7 +29,7 @@ ItemTools.defaultProps = {
   roomName: '',
   itemName: '',
   roomList: [],
-  itemCategory: NULL_INDEX
+  itemCategory: VALUE.NULL_INDEX
 }
 
 ItemTools.propTypes = {

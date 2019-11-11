@@ -1,5 +1,5 @@
 import * as types from './types'
-import { ERROR_MSG, NULL_INDEX } from '../constants'
+import { ERROR_MSG, VALUE } from '../constants'
 
 const reducer = (state, action) => {
   switch(action.type) {
@@ -45,14 +45,14 @@ const reducer = (state, action) => {
       }
     }
     case types.CREATE_ITEM: {
-      if (state.itemCategory === NULL_INDEX) {
+      if (state.itemCategory === VALUE.NULL_INDEX) {
         alert(ERROR_MSG.NO_SELECTED_ROOM)
-        return { ...state, itemCategory: NULL_INDEX }
+        return { ...state, itemCategory: VALUE.NULL_INDEX }
       } 
     
       if (!state.itemName) {
         alert(ERROR_MSG.NO_NAME)
-        return { ...state, itemCategory: NULL_INDEX }
+        return { ...state, itemCategory: VALUE.NULL_INDEX }
       }
       
       const targetList = state.roomList.slice()
@@ -66,7 +66,7 @@ const reducer = (state, action) => {
       return {
         ...state,
         roomList: targetList,
-        itemCategory: NULL_INDEX
+        itemCategory: VALUE.NULL_INDEX
       }
     }
 

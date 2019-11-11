@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import ItemContainer from '../../containers/Items/ItemContainer'
 
 // load constants
-import { NO_NAME, ERROR_MSG, NULL_INDEX } from '../../constants'
+import { TEXT, ERROR_MSG, VALUE } from '../../constants'
 
 function Room ({idx, name, list, deleteRoom }) {
   const itemList = list.map(({name, category, idx}) => (
@@ -22,8 +22,8 @@ function Room ({idx, name, list, deleteRoom }) {
 }
 
 Room.defaultProps = {
-  idx: NULL_INDEX,
-  name: NO_NAME,
+  idx: VALUE.NULL_INDEX,
+  name: TEXT.NO_NAME,
   list: [],
   deleteRoom: () => console.warn(ERROR_MSG.UNDEFINED_FUNC),
 }

@@ -1,20 +1,20 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { NO_NAME, ERROR_MSG, DELETE_ITEM, NULL_INDEX } from '../../constants'
+import { ERROR_MSG, TEXT, VALUE } from '../../constants'
 
 function Item ({name, category, idx, deleteItem}) {
   return (
     <div className="item">
       <h5>{name}</h5>
-      <button onClick={() => deleteItem(category, idx)}>{DELETE_ITEM}</button>
+      <button onClick={() => deleteItem(category, idx)}>{TEXT.DELETE_ITEM}</button>
     </div>
   )
 }
 
 Item.defaultProps = {
-  name: NO_NAME,
+  name: TEXT.NO_NAME,
   category: '',
-  idx: NULL_INDEX,
+  idx: VALUE.NULL_INDEX,
   deleteItem: () => console.warn(ERROR_MSG.UNDEFINED_FUNC)
 }
 

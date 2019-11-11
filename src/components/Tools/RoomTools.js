@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { ERROR_MSG, CREATE_ROOM } from '../../constants'
+import { ERROR_MSG, TEXT } from '../../constants'
 
 function RoomTools ({createRoom, setRoomName, roomName}) {
   return (
@@ -12,7 +12,7 @@ function RoomTools ({createRoom, setRoomName, roomName}) {
       <button
         className="btn-create-room"
         onClick={createRoom}
-        >{CREATE_ROOM}
+        >{TEXT.CREATE_ROOM}
       </button>
     </div>
   )
