@@ -1,7 +1,9 @@
+import { NULL_INDEX } from '../constants'
+
 const initialState = {
     roomName: '',
     itemName: '',
-    itemCategory: -1,
+    itemCategory: NULL_INDEX,
     roomList: []
 }
 

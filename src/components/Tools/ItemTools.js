@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { ERROR_MSG, CREATE_ITEM, NO_ROOM } from '../../constants'
+import { ERROR_MSG, CREATE_ITEM, NO_ROOM, NULL_INDEX } from '../../constants'
 
 function ItemTools ({itemName, setItemName, itemCategory, setItemCategory, createItem, roomList }) {
   const $roomSelectList = roomList.map(({name}, idx) => (
@@ -14,7 +14,7 @@ function ItemTools ({itemName, setItemName, itemCategory, setItemCategory, creat
         value={itemName}
         onChange={({target: { value }}) => setItemName(value)}/>
       <select value={itemCategory} onChange={({target: { value }}) => setItemCategory(value)}>
-        <option value="-1">{NO_ROOM}</option>
+        <option value={NULL_INDEX}>{NO_ROOM}</option>
         { $roomSelectList }
       </select>
       <button onClick={createItem}>{CREATE_ITEM}</button>
@@ -28,7 +28,8 @@ ItemTools.defaultProps = {
   createItem: () => console.warn(ERROR_MSG.UNDEFINED_FUNC),
   roomName: '',
   itemName: '',
-  roomList: []
+  roomList: [],
+  itemCategory: NULL_INDEX
 }
 
 ItemTools.propTypes = {

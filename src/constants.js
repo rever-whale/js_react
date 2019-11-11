@@ -1,9 +1,14 @@
+// text
 export const NO_NAME = '이름 없음'
 export const NO_ROOM = '방 없음'
 export const CREATE_ROOM = '방 만들기'
 export const CREATE_ITEM = '아이템 만들기'
 export const DELETE_ITEM = '아이템 삭제'
 
+// value
+export const NULL_INDEX = -1
+
+// msg
 export const ERROR_MSG = {
   NO_NAME: '이름을 입력해주세요.',
   DUPLICATE_NAME: '중복된 이름이 있습니다.',
